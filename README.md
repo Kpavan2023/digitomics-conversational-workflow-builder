@@ -189,6 +189,8 @@ Once all required information is collected, the system generates the workflow an
                          state and generated workflow
 ```
 
+[View Detailed System Architecture](docs/architecture/architecture.png)
+
 ### Architectural principle
 
 The **backend is the source of truth** for:
@@ -238,7 +240,7 @@ The system therefore treats workflow creation as a **requirement-gathering probl
 
 ---
 
-## 6. Requirement States
+## 7. Requirement States
 
 Each requirement can have one of the following states:
 
@@ -270,7 +272,7 @@ The system should not ask for the Gmail label/folder before knowing that Gmail i
 
 ---
 
-## 7. Clarification Strategy
+## 8. Clarification Strategy
 
 The question planner uses requirement priority and dependencies to select the next useful question.
 
@@ -291,7 +293,7 @@ This produces a progressive conversation instead of asking the user for everythi
 
 ---
 
-## 8. Core Backend Services
+## 9. Core Backend Services
 
 The backend separates responsibilities into focused services:
 
@@ -330,7 +332,7 @@ Converts the validated state into the final structured workflow representation.
 
 ---
 
-## 9. LLM / Provider Architecture
+## 10. LLM / Provider Architecture
 
 The project contains a provider abstraction:
 
@@ -349,7 +351,7 @@ This also makes the current implementation easier to test and reproduce consiste
 
 ---
 
-## 10. Workflow Representation
+## 11. Workflow Representation
 
 A generated workflow contains nodes and edges.
 
@@ -400,7 +402,7 @@ The frontend maps this representation into React Flow nodes and edges.
 
 ---
 
-## 11. Tech Stack
+## 12. Tech Stack
 
 ### Frontend
 - React
@@ -426,13 +428,13 @@ The frontend maps this representation into React Flow nodes and edges.
 
 ---
 
-## 12. Project Structure
+## 13. Project Structure
 
 [View Project Structure](docs/structure.md)
 
 ---
 
-## 13. Frontend Components
+## 14. Frontend Components
 
 ### `ChatPanel.tsx`
 Handles user messages, assistant responses, message input, loading state, and communication with the backend.
@@ -453,7 +455,7 @@ The frontend does **not** contain an independent workflow planner or fallback re
 
 ---
 
-## 14. Backend API Flow
+## 15. Backend API Flow
 
 A typical interaction follows:
 
@@ -477,7 +479,7 @@ The backend response contains the current conversational state and, when ready, 
 
 ---
 
-## 15. Database Persistence
+## 16. Database Persistence
 
 Conversation information is persisted in PostgreSQL through SQLAlchemy.
 
@@ -496,7 +498,7 @@ Supabase provides the hosted PostgreSQL database used by the application.
 
 ---
 
-## 16. Setup
+## 17. Setup
 
 ### Prerequisites
 
@@ -568,7 +570,7 @@ Open the local URL shown by Vite.
 
 ---
 
-## 17. Testing
+## 18. Testing
 
 Run the complete test suite from the project root:
 
@@ -596,7 +598,7 @@ Tests cover:
 53 passed in 0.57s
 ```
 
-## 18. Example End-to-End Flow
+## 19. Example End-to-End Flow
 
 ```text
 User:
@@ -663,7 +665,7 @@ generated
 
 ---
 
-## 19. Scope and Limitations
+## 20. Scope and Limitations
 
 ### Implemented
 
@@ -695,7 +697,7 @@ The assignment focuses on **understanding the user's automation intent, collecti
 
 ---
 
-## 20. Key Engineering Decisions
+## 21. Key Engineering Decisions
 
 ### Backend as the source of truth
 
@@ -727,7 +729,7 @@ This improves maintainability, testability, debugging, and future extensibility.
 
 ---
 
-## 21. Future Improvements
+## 22. Future Improvements
 
 Possible future extensions include:
 
@@ -746,7 +748,7 @@ These are outside the current assignment scope.
 
 ---
 
-## 22. Conclusion
+## 23. Conclusion
 
 This project demonstrates a conversational approach to workflow building where the system focuses on:
 
@@ -774,7 +776,7 @@ The resulting architecture keeps reasoning centralized in the backend while keep
 
 ---
 
-## 23. Assignment Submission
+## 24. Assignment Submission
 
 This repository contains:
 
